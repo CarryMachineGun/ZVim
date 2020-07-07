@@ -1,7 +1,7 @@
 set autoindent
 
 " show existing tab with 4 spaces width
-set tabstop=4 
+set tabstop=4
 
 " Whne indenting with '>', use 4 spaces width
 set shiftwidth=4
