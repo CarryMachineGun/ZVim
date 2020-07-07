@@ -3,13 +3,18 @@ function! AddTack()
 endfunction
 
 function! DoneCurrTask()
-    execute 's/\[ \]/[x]'
+    execute 's/\[.\]/[x]'
 endfunction
 
 function! UndoCurrTask()
-    execute 's/\[x\]/[ ]'
+    execute 's/\[.\]/[ ]'
+endfunction
+
+function! WaitCurrTask()
+    execute 's/\[.\]/[*]'
 endfunction
 
 noremap <space>oo :call AddTack()<CR>
 noremap <space>ok :call DoneCurrTask()<CR>
+noremap <space>oi :call WaitCurrTask()<CR>
 noremap <space>on :call UndoCurrTask()<CR>
