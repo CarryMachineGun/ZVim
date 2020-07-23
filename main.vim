@@ -17,3 +17,8 @@ execute 'source'.expand('<sfile>:p:h').'/print/print.vim'
 execute 'source'.expand('<sfile>:p:h').'/task.vim'
 execute 'source'.expand('<sfile>:p:h').'/leader.vim'
 execute 'source'.expand('<sfile>:p:h').'/highlights/highlights.vim'
+
+augroup git
+    autocmd!
+    autocmd FileType gitcommit  execute 'source'.expand('<sfile>:p:h').'/git.vim'
+augroup END
