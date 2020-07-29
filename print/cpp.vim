@@ -1,4 +1,17 @@
+function! AddDefination()
+    normal gg
+    execute "put=expand('%:t')"
+    normal ggdd
+    execute "s/.*/\\U&"
+    execute "s/\\./_"
+    execute "s/^/#ifndef "
+    normal  yyp
+    execute "s/ifndef/define"
+    normal Go#endif
+endfunction
+
 noremap <buffer> <space>p :s/\v(\s*)(.*)/\1std::cout<<"\2: "<<\2<<std::endl;
+noremap <buffer> <space>h :call AddDefination()<CR>
 noremap <buffer> <space>P :s/\v(\s*)(.*)/\1std::cout<<"\2"<<std::endl;
 
 noremap <buffer> <space>f :s/\v(\s*)(.*)\s+(.*)/\1for(int \2=0; \2<\3; \2++){}
@@ -24,3 +37,5 @@ noremap <buffer> <space>vf istd::vector<float>
 noremap <buffer> <space>cvf iconst std::vector<float>&
 
 noremap <buffer> <space>ms istd::make_shared<>()
+
+
