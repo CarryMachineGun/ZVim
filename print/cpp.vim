@@ -38,4 +38,6 @@ noremap <buffer> <space>cvf iconst std::vector<float>&
 
 noremap <buffer> <space>ms istd::make_shared<>()
 
+noremap <buffer> <space>i i#include 
+
 

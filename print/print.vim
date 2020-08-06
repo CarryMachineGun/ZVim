@@ -1,3 +1,4 @@
+execute 'source'.expand('<sfile>:p:h').'/common.vim'
 augroup print
     autocmd!
     autocmd FileType c,cpp  execute 'source'.expand('<sfile>:p:h').'/cpp.vim'
