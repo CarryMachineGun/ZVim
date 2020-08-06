@@ -10,6 +10,34 @@ function! AddDefination()
     normal Go#endif
 endfunction
 
+function! SortInclude()
+    " Normal unsort
+    :/include
+    normal ggn
+    :let start_line = line(".")
+    normal ggN
+    :let end_line = line(".")
+    :execute ''.start_line.','.end_line.'sort! u'
+
+    " Sort system include
+    :/include <
+    normal ggn
+    :let start_line = line(".")
+    normal ggN
+    :let end_line = line(".")
+    :execute ''.start_line.','.end_line.'sort'
+
+    " Sort local include
+    :/include "
+    normal ggn
+    :let start_line = line(".")
+    normal ggN
+    :let end_line = line(".")
+    :execute ''.start_line.','.end_line.'sort'
+
+
+endfunction
+
 noremap <buffer> <space>p :s/\v(\s*)(.*)/\1std::cout<<"\2: "<<\2<<std::endl;
 noremap <buffer> <space>h :call AddDefination()<CR>
 noremap <buffer> <space>P :s/\v(\s*)(.*)/\1std::cout<<"\2"<<std::endl;
@@ -39,5 +67,8 @@ noremap <buffer> <space>cvf iconst std::vector<float>&
 noremap <buffer> <space>ms istd::make_shared<>()
 
 noremap <buffer> <space>i i#include 
+
+noremap <buffer> <space>so :call SortInclude()<CR>
+
 
 
