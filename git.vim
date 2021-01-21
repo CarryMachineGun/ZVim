@@ -10,6 +10,10 @@ function! AddFix()
     normal ggddOFix: 
 endfunction
 
+function! AddFixing()
+    normal ggddOFix: 
+endfunction
+
 function! AddFeature()
     normal ggddOFeature: 
 endfunction
