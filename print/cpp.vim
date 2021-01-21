@@ -38,9 +38,9 @@ function! SortInclude()
 
 endfunction
 
-noremap <buffer> <space>p :s/\v(\s*)(.*)/\1std::cout<<"\2: "<<\2<<std::endl;
+noremap <buffer> <space>p :s/\v(\s*)(.*)/\1std::cout<<"\2: "<<\2<<std::endl;<CR>
+noremap <buffer> <space>P :s/\v(\s*)(.*)/\1std::cout<<"\2"<<std::endl;<CR>
 noremap <buffer> <space>h :call AddDefination()<CR>
-noremap <buffer> <space>P :s/\v(\s*)(.*)/\1std::cout<<"\2"<<std::endl;
 
 noremap <buffer> <space>f :s/\v(\s*)(.*)\s+(.*)/\1for(int \2=0; \2<\3; \2++){}
 noremap <buffer> <space>fa :s/\v(\s*)(.*)\s+(.*)/\1for(auto \&\2 : \3){}
