@@ -11,7 +11,7 @@ function! AddFix()
 endfunction
 
 function! AddFixing()
-    normal ggddOFix: 
+    normal ggddOFixing:
 endfunction
 
 function! AddFeature()
