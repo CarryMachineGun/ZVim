@@ -1,5 +1,5 @@
 function! AddTack()
-    normal o-[ ] 
+    normal o- [ ] 
 endfunction
 
 function! DoneCurrTask()
@@ -17,4 +17,4 @@ endfunction
 noremap <space>oo :call AddTack()<CR>
 noremap <space>ok :call DoneCurrTask()<CR>
 noremap <space>oi :call WaitCurrTask()<CR>
-noremap <space>on :call UndoCurrTask()<CR>
+noremap <space>ou :call UndoCurrTask()<CR>

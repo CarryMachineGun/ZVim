@@ -26,6 +26,10 @@ function! AddDoc()
     normal ggddODoc:
 endfunction
 
+function! AddComment()
+    normal ggddOComment: 
+endfunction
+
 function! AddTag()
     normal gg0f:i<>
 endfunction
@@ -42,3 +46,4 @@ noremap <buffer> <space>xi :call AddFixing()<CR>
 noremap <buffer> <space>t :call AddTag()<CR>
 
 noremap <buffer> <space>d :call AddDoc()<CR>
+noremap <buffer> <space>c :call AddComment()<CR>
